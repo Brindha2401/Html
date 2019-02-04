@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+</head>
+<body>
+	<div id="demo"></div> 
+	<script>
+		function getParameterByName(name, url) {
+    		if (!url) url = window.location.href;
+    			name = name.replace(/[\[\]]/g, '\\$&');
+    		var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+       	 					results = regex.exec(url);
+    		if (!results) return null;
+    		if (!results[2]) return '';
+    		return decodeURIComponent(results[2].replace(/\+/g, ' '));
+		}
+		var sn = getParameterByName('uname');
+		document.getElementById("demo").innerHTML = sn;
+	</script>
+</body>
+</html>
